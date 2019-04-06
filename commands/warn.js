@@ -18,12 +18,17 @@ module.exports.run = async (bot, message, args) => {
   .setDescription(`**Warned User:** <@${wUser.id}>\n**Warned By:** <@${message.author.id}>\n**Warned In:** ${message.channel}\n**Reason:** ${reason}`)
   .setColor("#f5f6fa")
 
-  //let warnchannel = message.guild.channels.find(`name`, "zap-logs");
-  //if(!warnchannel) return message.reply("Couldn't find logs channel!");
+  let warnchannel = message.guild.channels.find(`name`, "zap-logs");
+  if(!warnchannel) {
+    message.reply("Make a channel named `#logs` to store warning data!");
+  } else {
+    warnchannel.send(warnEmbed);
+  }
+  message.channel.send(warnEmbed);
 
   //warnchannel.send(`⚠ WARNING ⚠\n\nWarned User: <@${wUser.id}>\n\nWarned By: <@${message.author.id}>\n\nWarned In: ${message.channel}\n\nWarns for ${wUser}: ${warns[wUser.id].warns}\n\nReason: ${reason}`);
 
-  warnchannel.send(warnEmbed)
+  
 
 }
 
