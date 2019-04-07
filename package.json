@@ -1,12 +1,12 @@
 {
-  "name": "test",
+  "name": "Shinjan Bot",
   "version": "999.999.999",
   "description": "A discord bot made with discord.js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "HalfBaked",
+  "author": "Omni",
   "license": "MIT",
   "dependencies": {
     "array-sort": "^1.0.0",
