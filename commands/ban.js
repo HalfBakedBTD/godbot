@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
         .setTitle("Ban Command")
         .addField("Description:", `Ban a member`, true)
         .addField("Usage:", `!ban [user] [reason]`, true)
-        .addField("Example:", `!ban @Bern spam`)
+        .addField("Example:", `!ban @Omni For Being To Cool`)
 
         if(!message.member.hasPermission("BAN_MEMBERS") && message.author.id !== "323940682857185321") return message.channel.send("Sorry you don't have permission to use this!");
 
