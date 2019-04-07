@@ -4,7 +4,7 @@ const fs = require("fs");
 module.exports.run = async (bot, message, args) => {
 
   if(!message.member.hasPermission("MANAGE_SERVER")) return message.reply("JUST NO.");
-  if(!args[0] || args[0 == "help"]) return message.reply("Usage: !setprefix <The Prefix Will Reset Once  New Command Is Added! So If ypur bot isn't responding to your command, try .kick and see if it responds.>");
+  if(!args[0] || args[0 == "help"]) return message.reply("Usage: !setprefix <The Prefix Will Reset Once A New Command Is Added! So If your bot isn't responding to your command, try .kick and see if it responds.>");
 
   let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
 
