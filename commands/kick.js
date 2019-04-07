@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
   .setTitle("Kick Command")
   .addField("Description:", `Kick a member`, true)
   .addField("Usage:", "!kick [user] [reason]", true)
-  .addField("Example:" ,"!kick @Omni Too Cool")
+  .addField("Example:" ,"!kick @Omni Too Lit")
 
     let member = message.mentions.members.first();
     if(!member) return message.channel.send(xdemb)
