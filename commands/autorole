@@ -1,20 +1,14 @@
+const Discord = require(discord.js)
+
 module.exports = Cmds.addCommand({
-    cmds: [";setautorole ", ";addautorole ", ";arole "],
-
-    requires: {
-        guild: true,
-        loud: false
-    },
-
-    desc: "Set a new autorole",
-
-    args: "([role_name]) ([auto_role_name])",
-
-    example: "for-hire hire",
-
+   
+  .setColor ('RANDOM")
+  .setTitle("AutoRole Command")
+  .addField("Description:", `Set a new autorole`,true
+  .addField("Usage:", `[role_name][auto_role_name]`,true)
+  .addField("Example", `!autorole Member`)
     ///////////////////////////////////////////////////////////////////////////////////////////
-
-    func: (cmd, args, msgObj, speaker, channel, guild) => {
+func: (cmd, args, msgObj, speaker, channel, guild) => {
         var data = Util.getDataFromString(args, [
             function(str, results) {
                 return Util.getRole(str, guild);
@@ -29,5 +23,6 @@ module.exports = Cmds.addCommand({
         }
         Data.guildSet(guild, Data.autoRoles, name, role.name);
         Util.print(channel, "Added the autorole", Util.fix(name), "for the", role.name, "role");
+        name: 'arole'
     }
 });
