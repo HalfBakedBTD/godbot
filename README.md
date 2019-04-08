@@ -1,1 +1,1 @@
-# godbot
+# ShinjanBot
