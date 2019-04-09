@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
     
     let botAvatar = bot.user.displayAvatarURL;
     let botEmbed = new Discord.RichEmbed()
-    .setColor('RANDOM")
+    .setColor("RANDOM")
     .setThumbnail(botAvatar)
     .addField("Name:", `${bot.user.username}`, true)
     .addField("Guilds:", `${7992}`, true)
