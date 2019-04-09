@@ -15,15 +15,12 @@ module.exports.run = async (bot, message, args) => {
     .setColor("RANDOM")
     .setThumbnail(botAvatar)
     .addField("Name:", `${bot.user.username}`, true)
-    .addField("Guilds:", `${7992}`, true)
-    .addField("Users:", `${10,900}`, true)
     .addField("Text Channels:", `${text_channels}`, true)
     .addField("Voice Channels:", `${voice_channels}`, true)
     .addField("Created By:", `🔥NoChance🔥#2019`, true)
     .addField("Language:", `discord.js`, true)
-    .addField("Memory:", `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed() + "MB"}`, true)
     .addField("Birth:", `${bot.user.createdAt}`, true)
-    .addField("Helps:", "[Invite Link](https://discordapp.com/api/oauth2/authorize?client_id=505877805058359326&permissions=8&scope=bot) | [Commands](**Info**,**Kick**,**Ban**,**Say**,**Mute**,**Unmute**,**Random**,**More Commands Added Daily**)");
+    .addField("COmmands:", "[Invite Link](https://discordapp.com/api/oauth2/authorize?client_id=505877805058359326&permissions=8&scope=bot) | [Commands](**Info**,**Kick**,**Ban**,**Say**,**Mute**,**Unmute**,**Random**,**More Commands Added Daily**)");
     
     message.channel.send(botEmbed)
 
