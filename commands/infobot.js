@@ -18,9 +18,9 @@ module.exports.run = async (bot, message, args) => {
     .addField("Text Channels:", `${text_channels}`, true)
     .addField("Voice Channels:", `${voice_channels}`, true)
     .addField("Created By:", `🔥NoChance🔥#2019`, true)
-    .addField("Language:", `discord.js`, true)
+    .addField("Language:", `English`, true)
     .addField("Birth:", `${bot.user.createdAt}`, true)
-    .addField("COmmands:", "[Invite Link](https://discordapp.com/api/oauth2/authorize?client_id=505877805058359326&permissions=8&scope=bot) | [Commands](**Info**,**Kick**,**Ban**,**Say**,**Mute**,**Unmute**,**Random**,**More Commands Added Daily**)");
+    .addField("Commands:", "[Invite Link](https://discordapp.com/api/oauth2/authorize?client_id=505877805058359326&permissions=8&scope=bot) | [Commands](**Info**,**Kick**,**Ban**,**Say**,**Mute**,**Unmute**,**Random**,**More Commands Added Daily**)");
     
     message.channel.send(botEmbed)
 
