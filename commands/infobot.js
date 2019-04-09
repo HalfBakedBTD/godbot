@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("Users:", `${bot.users.size}`, true)
     .addField("Text Channels:", `${text_channels}`, true)
     .addField("Voice Channels:", `${voice_channels}`, true)
-    .addField("Created By:", `<@284137818895417344>`, true)
+    .addField("Created By:", `<@323940682857185321>`, true)
     .addField("Language:", `discord.js`, true)
     .addField("Memory:", `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed() + "MB"}`, true)
     .addField("Birth:", `${bot.user.createdAt}`, true)
