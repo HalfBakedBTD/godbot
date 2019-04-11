@@ -34,5 +34,5 @@ exports.config = {
 };
 
 module.exports.help = {
-    name: "role add"
+    name: "addrole"
 }
