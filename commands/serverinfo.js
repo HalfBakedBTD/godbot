@@ -39,9 +39,6 @@ embed.setAuthor(message.guild.name, message.guild.iconURL ? `https://cdn.discord
 .addField("Members", message.guild.memberCount, true)
 .addField("Roles", message.guild.roles.size, true)
 .addField("Channels", message.guild.channels.size, true)
-.addField("Emojis", emojis, true)
-.addField("Verification Level", verifLevels[message.guild.verificationLevel], true)
-.addField("Default Channel", message.guild.defaultChannel, true)
 .setColor("RANDOM")
 message.channel.send(embed);
 }
