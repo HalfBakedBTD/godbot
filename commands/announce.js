@@ -13,7 +13,6 @@ exports.run = async (bot, message, args, ops) => {
     // Create Embed
     const embed = new Discord.RichEmbed()
         .setColor("YELLOW")
-        .setFooter('Annoucement.')
         .setDescription(args.join(' '))
         
     let msg = await message.channel.send(embed)
