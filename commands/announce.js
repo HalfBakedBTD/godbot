@@ -29,5 +29,5 @@ exports.config = {
 };
 
 module.exports.help = {
-  name: "announce
+  name: "announce"
 }
