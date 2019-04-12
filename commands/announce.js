@@ -12,7 +12,7 @@ exports.run = async (bot, message, args, ops) => {
     
     // Create Embed
     const embed = new Discord.RichEmbed()
-        .setColor("DARK_BLUE")
+        .setColor("#2100ff")
         .setDescription(args.join(' '))
         
     let msg = await message.channel.send(embed)
