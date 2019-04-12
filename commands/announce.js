@@ -12,7 +12,7 @@ exports.run = async (bot, message, args, ops) => {
     
     // Create Embed
     const embed = new Discord.RichEmbed()
-        .setColor("RANDOM")
+        .setColor("YELLOW")
         .setFooter('Annoucement.')
         .setDescription(args.join(' '))
         
@@ -29,5 +29,5 @@ exports.config = {
 };
 
 module.exports.help = {
-  name: "announce"
+  name: "a"
 }
