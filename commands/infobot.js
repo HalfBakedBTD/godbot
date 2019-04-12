@@ -20,7 +20,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("Created By:", `🔥NoChance🔥#2019`, true)
     .addField("Language:", `English`, true)
     .addField("Birth:", `${bot.user.createdAt}`, true)
-    .addField("Commands:", "[Invite Link](https://discordapp.com/api/oauth2/authorize?client_id=505877805058359326&permissions=8&scope=bot) | [Commands](**Info**,**Kick**,**Ban**,**Say**,**Mute**,**Unmute**,**Uptime**,**More Commands Added Daily**)");
+    .addField("Commands:", "[Invite Link](https://discordapp.com/api/oauth2/authorize?client_id=505877805058359326&permissions=8&scope=bot) | [Commands](**Info**,**Kick**,**Ban**,**Say**,**Mute**,**Unmute**,**Uptime**,**Unban**, **Announce**(a), **Poll**, **Addrole**,**Removerole**, **More Commands Added Daily**)");
     
     message.channel.send(botEmbed)
 
