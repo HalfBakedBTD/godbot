@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
 
     await message.channel.send(`***I just gave ${rMember} the ${gRole.name} role!***`)
   
-  message.delete(2000);
+  message.delete();
 
 }
 
