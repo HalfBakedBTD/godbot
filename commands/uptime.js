@@ -65,9 +65,8 @@ exports.run = (client, message) => {
   .setTimestamp()
   .setThumbnail("https://cdn.discordapp.com/avatars/552705628741566475/c1784f9d7e5b740954335e6bb53975d9.png?size=2048")
   .addField(':clock: Uptime', 'Bot\'s uptime', true)
-  .addField('Running on:', `**${client.guilds.size}** servers`, true)
   .addField(':white_check_mark: Active for:', dateString, true)
-  .setColor("BLUE");
+  .setColor("Random");
     message.channel.send({embed})
   .catch(console.error);
 };
