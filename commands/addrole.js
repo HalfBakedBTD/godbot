@@ -25,8 +25,9 @@ module.exports.run = async (bot, message, args) => {
     try{
        await rMember.send(`You have been given the role ${gRole.name}`)
     }catch(e){
-        message.channel.send(`<@${rMember.id}> They have been given the role ${gRole.name} I tried to DM them but their DMs are locked`)
-    }
+        message.channel.send(`<@${rMember.id}> They have been given the role ${gRole.name} I tried to DM them but their DMs are locked`).then(msg => msg.delete(2000));
+    });
+
 }
 
 exports.config = {
@@ -34,5 +35,5 @@ exports.config = {
 };
 
 module.exports.help = {
-    name: "addrole"
+    name: "arole"
 }
