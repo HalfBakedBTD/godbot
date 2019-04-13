@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
    let dMessage = args.join(" ").slice(22);
    if(dMessage.length < 1) return message.reply('You must supply a message!')
 
-     dUser.send(`${member.guild.id}: ${dMessage}`)
+     dUser.send(`<@${user.id}>: ${dMessage}`)
   
   
 
