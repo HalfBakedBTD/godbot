@@ -6,6 +6,7 @@ module.exports.run = async (bot, message, args) => {
    if (!dUser) return message.channel.send("Can't find user!");
    let dMessage = args.join(" ").slice(22);
    if(dMessage.length < 1) return message.reply('You must supply a message!')
+   if(member.id === message.author.id) return message.channel.send("You can't give support to yourself!")
 
      dUser.send(`from ${message.author.tag}: ${dMessage}`)
   
