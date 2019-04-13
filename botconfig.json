@@ -1,7 +1,9 @@
 {
-  "prefix": ".",
+  "prefix": "!",
   "swearfilter": true,
   "GOOGLE_API_KEY":"NTA1ODc3ODA1MDU4MzU5MzI2.XLI0mw.2PwGZdZzasJ1YJ91FI65QkwhTWA",
+  "greenTick": "315304489588359168",
+	"redTick": "315304490914021376",
   "red": "#b70000",
   "orange": "#ff6a00",
   "green": "#00ff26",
