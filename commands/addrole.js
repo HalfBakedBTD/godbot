@@ -12,8 +12,9 @@ module.exports.run = async (bot, message, args) => {
   if(rMember.roles.has(gRole.id)) return message.reply("This user already have that role.");
   await(rMember.addRole(gRole.id));
 
-    await message.channel.send(`***I just gave ${rMember} the ${gRole.name} role!***`).then(msg => msg.delete(2000));
-});
+    await message.channel.send(`***I just gave ${rMember} the ${gRole.name} role!***`)
+  
+  message.delete(2000);
 
 }
 
