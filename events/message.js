@@ -4,7 +4,7 @@ module.exports = async (client, message) => {
   if (message.author.bot) return;
   const config = require("../botconfig")
   const Discord = require ("discord.js")
-  const swearWords = ['shit', 'fuck', 'bitch', 'nigger', 'nigga', 'cunt', 'whore', 'fag', 'faggot', 'dick', 'cock', 'pussy', 'slut', 'bastard', 'fuck you'];
+  const swearWords = ['shit', 'fuck', 'bitch', 'nigger', 'nigga', 'cunt', 'whore', 'fag', 'faggot', 'dick', 'cock', 'pussy', 'slut', 'bastard', 'fuck you', 'stfu'];
   if (config.swearfilter == true) {
     if (swearWords.some(word => message.content.toLowerCase().includes(word))) {
       message.delete().catch(O_o => {});
