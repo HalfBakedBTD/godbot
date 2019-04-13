@@ -18,5 +18,5 @@ exports.config = {
 };
 
 module.exports.help = {
-  name:"dm"
+  name:"support"
 }
