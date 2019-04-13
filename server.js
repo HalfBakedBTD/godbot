@@ -12,7 +12,7 @@ const Discord = require('discord.js');
 //constants
 const VERSION = '0.1.1';
 const TOKEN = 'NTA1ODc3ODA1MDU4MzU5MzI2.XLFC2g.1wBYig0sRg9zvIq5VYjlgpq8cXM';
-const CHANNEL = 'logs';
+const CHANNEL = 'log';
 
 //declarations
 var bot = new Discord.Client();
@@ -220,7 +220,7 @@ bot.on('guildMemberUpdate', function(guild, oldMember, newMember) {
 
 
     //post in the guild's log channel
-    var log = guild.channels.find('name', logs);
+    var log = guild.channels.find('name', CHANNEL);
     if (log != null) {
         switch(change) {
             case Changes.unknown:
