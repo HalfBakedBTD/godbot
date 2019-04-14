@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
     .setThumbnail(botAvatar)
     .addField("Name:", `${bot.user.username}`, true)
     .addField("Text Channels:", `${text_channels}`, true)
-    .addField("Users":", `${bot.users.size.toLocaleString()}`, true)
+    .addField("Users":", `${bot.users.size}`, true)
     .addField("Voice Channels:", `${voice_channels}`, true)
     .addField("Created By:", `🔥NoChance🔥#2019`, true)
     .addField("Language:", `English`, true)
