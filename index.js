@@ -3,6 +3,8 @@ const Discord = require("discord.js");
 const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
+require('./musicscript.js')
+
 
 fs.readdir("./commands/", (err, files) => {
 
