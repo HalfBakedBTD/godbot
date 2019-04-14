@@ -1,6 +1,5 @@
-
 const { Client, Util } = require('discord.js');
-const { TOKEN, PREFIX, GOOGLE_API_KEY } = require('./config');
+const { TOKEN, prefix, GOOGLE_API_KEY } = require('./botconfig');
 const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
 
@@ -14,15 +13,13 @@ client.on('warn', console.warn);
 
 client.on('error', console.error);
 
-client.on('ready', () => console.log('Yo this ready!'));
-
 client.on('disconnect', () => console.log('I just disconnected, making sure you know, I will reconnect now...'));
 
 client.on('reconnecting', () => console.log('I am reconnecting now!'));
 
 client.on('message', async msg => { // eslint-disable-line
 	if (msg.author.bot) return undefined;
-	if (!msg.content.startsWith(PREFIX)) return undefined;
+	if (!msg.content.startsWith(prefix)) return undefined;
 
 	const args = msg.content.split(' ');
 	const searchString = args.slice(1).join(' ');
@@ -30,17 +27,17 @@ client.on('message', async msg => { // eslint-disable-line
 	const serverQueue = queue.get(msg.guild.id);
 
 	let command = msg.content.toLowerCase().split(' ')[0];
-	command = command.slice(PREFIX.length)
+	command = command.slice(prefix.length)
 
-	if (command === 'play') {
+	if (command === 'play'||command === 'p') {
 		const voiceChannel = msg.member.voiceChannel;
-		if (!voiceChannel) return msg.channel.send('I\'m sorry but you need to be in a voice channel to play music!');
+		if (!voiceChannel) return msg.channel.send('<:4366_RedTick:558281890964963368> Seems like your not in a voice channel');
 		const permissions = voiceChannel.permissionsFor(msg.client.user);
 		if (!permissions.has('CONNECT')) {
-			return msg.channel.send('I cannot connect to your voice channel, make sure I have the proper permissions!');
+			return msg.channel.send('<:4366_RedTick:558281890964963368> I cannot connect to your voice channel, make sure I have the proper permissions!');
 		}
 		if (!permissions.has('SPEAK')) {
-			return msg.channel.send('I cannot speak in this voice channel, make sure I have the proper permissions!');
+			return msg.channel.send('<:4366_RedTick:558281890964963368> I cannot speak in this voice channel, make sure I have the proper permissions!');
 		}
 
 		if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
@@ -50,7 +47,7 @@ client.on('message', async msg => { // eslint-disable-line
 				const video2 = await youtube.getVideoByID(video.id); // eslint-disable-line no-await-in-loop
 				await handleVideo(video2, msg, voiceChannel, true); // eslint-disable-line no-await-in-loop
 			}
-			return msg.channel.send(`✅ Playlist: **${playlist.title}** has been added to the queue!`);
+			return msg.channel.send(`<:5727_GreenTick:558281961031073801> Playlist: **${playlist.title}** has been added to the queue!`);
 		} else {
 			try {
 				var video = await youtube.getVideo(url);
@@ -72,40 +69,40 @@ Please provide a value to select one of the search results ranging from 1-10.
 						});
 					} catch (err) {
 						console.error(err);
-						return msg.channel.send('No or invalid value entered, cancelling video selection.');
+						return msg.channel.send('<:4366_RedTick:558281890964963368> No or invalid value entered, cancelling video selection.');
 					}
 					const videoIndex = parseInt(response.first().content);
 					var video = await youtube.getVideoByID(videos[videoIndex - 1].id);
 				} catch (err) {
 					console.error(err);
-					return msg.channel.send('🆘 I could not obtain any search results.');
+					return msg.channel.send('<:4366_RedTick:558281890964963368> I could not obtain any search results.');
 				}
 			}
 			return handleVideo(video, msg, voiceChannel);
 		}
 	} else if (command === 'skip') {
-		if (!msg.member.voiceChannel) return msg.channel.send('You are not in a voice channel!');
-		if (!serverQueue) return msg.channel.send('There is nothing playing that I could skip for you.');
-		serverQueue.connection.dispatcher.end('Skip command has been used!');
+		if (!msg.member.voiceChannel) return msg.channel.send('<:4366_RedTick:558281890964963368> You\'re not in a voice channel!');
+		if (!serverQueue) return msg.channel.send('<:4366_RedTick:558281890964963368> There is nothing playing that I could skip for you.');
+		serverQueue.connection.dispatcher.end('<:5727_GreenTick:558281961031073801> Skip command has been used!');
 		return undefined;
 	} else if (command === 'stop') {
 		if (!msg.member.voiceChannel) return msg.channel.send('You are not in a voice channel!');
 		if (!serverQueue) return msg.channel.send('There is nothing playing that I could stop for you.');
 		serverQueue.songs = [];
-		serverQueue.connection.dispatcher.end('Stop command has been used!');
+		serverQueue.connection.dispatcher.end('<:5727_GreenTick:558281961031073801> Stop command has been used!');
 		return undefined;
 	} else if (command === 'volume') {
-		if (!msg.member.voiceChannel) return msg.channel.send('You are not in a voice channel!');
-		if (!serverQueue) return msg.channel.send('There is nothing playing.');
+		if (!msg.member.voiceChannel) return msg.channel.send('<:4366_RedTick:558281890964963368> You are not in a voice channel!');
+		if (!serverQueue) return msg.channel.send('<:4366_RedTick:558281890964963368> There is nothing playing.');
 		if (!args[1]) return msg.channel.send(`The current volume is: **${serverQueue.volume}**`);
 		serverQueue.volume = args[1];
 		serverQueue.connection.dispatcher.setVolumeLogarithmic(args[1] / 5);
 		return msg.channel.send(`I set the volume to: **${args[1]}**`);
 	} else if (command === 'np') {
-		if (!serverQueue) return msg.channel.send('There is nothing playing.');
-		return msg.channel.send(`🎶 Now playing: **${serverQueue.songs[0].title}**`);
+		if (!serverQueue) return msg.channel.send('<:4366_RedTick:558281890964963368> There is nothing playing.');
+		return msg.channel.send(`<:9142_OsuNote:558281532104507403> Now playing: **${serverQueue.songs[0].title}** Requested by <@${serverQueue.songs[0].requestedby.id}>`);
 	} else if (command === 'queue') {
-		if (!serverQueue) return msg.channel.send('There is nothing playing.');
+		if (!serverQueue) return msg.channel.send('<:4366_RedTick:558281890964963368> There is nothing playing.');
 		return msg.channel.send(`
 __**Song queue:**__
 ${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}
@@ -124,7 +121,7 @@ ${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}
 			serverQueue.connection.dispatcher.resume();
 			return msg.channel.send('▶ Resumed the music for you!');
 		}
-		return msg.channel.send('There is nothing playing.');
+		return msg.channel.send('<:4366_RedTick:558281890964963368> There is nothing playing.');
 	}
 
 	return undefined;
@@ -132,8 +129,9 @@ ${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}
 
 async function handleVideo(video, msg, voiceChannel, playlist = false) {
 	const serverQueue = queue.get(msg.guild.id);
-	console.log(video);
+	//console.log(video);
 	const song = {
+    requestedby: msg.author,
 		id: video.id,
 		title: Util.escapeMarkdown(video.title),
 		url: `https://www.youtube.com/watch?v=${video.id}`
@@ -156,15 +154,15 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
 			queueConstruct.connection = connection;
 			play(msg.guild, queueConstruct.songs[0]);
 		} catch (error) {
-			console.error(`I could not join the voice channel: ${error}`);
+			console.error(`<:4366_RedTick:558281890964963368> I could not join the voice channel: ${error}`);
 			queue.delete(msg.guild.id);
-			return msg.channel.send(`I could not join the voice channel: ${error}`);
+			return msg.channel.send(`<:4366_RedTick:558281890964963368> I could not join the voice channel: ${error}`);
 		}
 	} else {
 		serverQueue.songs.push(song);
 		console.log(serverQueue.songs);
 		if (playlist) return undefined;
-		else return msg.channel.send(`✅ **${song.title}** has been added to the queue!`);
+		else return msg.channel.send(`<:5727_GreenTick:558281961031073801> **${song.title}** has been added to the queue!`);
 	}
 	return undefined;
 }
@@ -179,7 +177,7 @@ function play(guild, song) {
 	}
 	console.log(serverQueue.songs);
 
-	const dispatcher = serverQueue.connection.playStream(ytdl(song.url))
+	const dispatcher = serverQueue.connection.playStream(ytdl(song.url, {audioOnly:true}))
 		.on('end', reason => {
 			if (reason === 'Stream is not generating quickly enough.') console.log('Song ended.');
 			else console.log(reason);
@@ -189,7 +187,7 @@ function play(guild, song) {
 		.on('error', error => console.error(error));
 	dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
 
-	serverQueue.textChannel.send(`🎶 Start playing: **${song.title}**`);
+	serverQueue.textChannel.send(`<:9142_OsuNote:558281532104507403> Now Playing **${song.title}**\nRequested By: [<@${song.requestedby.id}>]`);
 }
 
-client.login(TOKEN);
+client.login(process.env.TOKEN);
