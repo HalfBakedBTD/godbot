@@ -25,11 +25,11 @@ if (member.user.bot === true) {
                 .setColor("RANDOM")
                 .addField("Full Username", `${member.user.tag}`, inline)
                 .addField("ID", member.user.id, inline)
-                .addField("Nickname", `${member.nickname !== null ? `Nickname: ${member.nickname}` : "None"}`, true)
+                .addField("Nickname", `${member.nickname !== null ? `Nickname: ${member.nickname}` : "Never Had One"}`, true)
                 .addField("Bot", `${bot}`,inline, true)
                 .addField("Status", `${status[member.user.presence.status]}`, inline, true)
-                .addField("Playing", `${member.user.presence.game ? ` ${member.user.presence.game.name}` : "Not playing"}`,inline, true)
-                .addField("Roles", `${member.roles.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).join(" **|** ") || "No Roles"}`, true)
+                .addField("Playing", `${member.user.presence.game ? ` ${member.user.presence.game.name}` : "Not playing anything"}`,inline, true)
+                .addField("Roles", `${member.roles.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).join(" **|** ") || "Not Cool Enough"}`, true)
                 .addField("Joined Discord At", member.user.createdAt)
                 .setFooter(`Information about ${member.user.username}`)
                 .setTimestamp()
@@ -38,7 +38,7 @@ if (member.user.bot === true) {
     }
 
 module.exports.config = {
-aliases: ['ui']
+aliases: ['usr']
 };
 
 
