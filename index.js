@@ -25,11 +25,11 @@ fs.readdir("./commands/", (err, files) => {
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
 
-  bot.user.setGame(`.info |${client.members.size}`);
+  bot.user.setGame(`.info | 1,264 Members`);
 });
 
 bot.on('guildCreate', guild => {
-  bot.user.setGame(`.info |${client.members.size}.`);
+  bot.user.setGame(`.info | 1,264 Members`);
 });
 
 bot.on("message", async message => {
