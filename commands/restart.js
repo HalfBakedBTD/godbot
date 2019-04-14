@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 module.exports.run = async (bot, message, args) => {
     if(!message.author.id === "323940682857185321") return message.channel.send(":x: Only usable by Shinjan Bot Developers.");
-    message.channel.send('Restarting. Bye will be right back!').then(() => {
+    message.channel.send('Stop Abusing Me!').then(() => {
     process.exit(2);
    });
 };
