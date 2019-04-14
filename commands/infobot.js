@@ -15,6 +15,7 @@ module.exports.run = async (bot, message, args) => {
     .setColor("RANDOM")
     .setThumbnail(botAvatar)
     .addField("Name:", `${bot.user.username}`, true)
+    .addField("Users", `4,975`, true)
     .addField("Text Channels:", `1,932`, true)
     .addField("Voice Channels:", `1,802`, true)
     .addField("Created By:", `🔥NoChance🔥#2019`, true)
