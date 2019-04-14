@@ -38,7 +38,7 @@ if (member.user.bot === true) {
     }
 
 module.exports.config = {
-aliases: ['usr']
+aliases: ['us']
 };
 
 
