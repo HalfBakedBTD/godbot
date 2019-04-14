@@ -1,7 +1,7 @@
 const Discord = require("discord.js")
 
 module.exports.run = (client, message, args) => {
-    if (message.author.id !== "323940682857185321") return message.channel.send("Your not a developer of Shinjan Bot! Stop Being a liar!");
+    if (message.author.id !== "323940682857185321") return message.channel.send("Your not a developer of Shinjan Bot!");
     
     switch(args[0]){
         case 'p': //setting activity to "playing"
