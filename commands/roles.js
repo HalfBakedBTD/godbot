@@ -4,7 +4,7 @@ const Discord = module.require('discord.js');
 module.exports.run = async (bot, message, args) => {
 
 
-  var ROLESS = message.guild.roles.array()
+  var ROLEZZ = message.guild.roles.array()
 
   
 
@@ -33,7 +33,7 @@ module.exports.run = async (bot, message, args) => {
 }
 
 exports.config = {
-    aliases: ['role' ]
+    aliases: ['role']
 };
 
 module.exports.help = {
