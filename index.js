@@ -5,7 +5,6 @@ const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 require('./musicscript.js')
 
-
 fs.readdir("./commands/", (err, files) => {
 
   if(err) console.log(err);
