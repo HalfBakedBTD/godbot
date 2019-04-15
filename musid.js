@@ -10,8 +10,7 @@ const roles = ["Artist", "Public Relations", "Intern"];
 const reactions = ["😖", "🖌", "😃"];
 const embed = true; // Set to "true" if you want all roles to be in a single embed
 const embedColor = "BLUE"; // Set the embed color if the "embed" variable is set to true
-const botToken = "NTA1ODc3ODA1MDU4MzU5MzI2.XLNnuw.dAuHtAzUi2uofiOT-1bFCNtMbPs";
-/**
+const botToken = 
  * You'll have to set this up yourself! Read more below:
  * 
  * https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token
