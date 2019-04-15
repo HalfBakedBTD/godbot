@@ -162,18 +162,6 @@ async function play(bot, ops, data, connection, message) {
 
 }
 
-
-
-exports.config = {
-
-    aliases: [ 'p' ]
-
-};
-
-
-
 exports.help = {
-
     name: 'play'
-
 }
